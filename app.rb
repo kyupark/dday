@@ -1,11 +1,10 @@
-require 'rubygems'
-require 'sinatra'
+class MyApp < Sinatra::Base
+  get '/' do
+    @title = "dday"
+    haml :index
+  end
 
-get '/' do
-  @title = "dday"
-  haml :index
-end
-
-get '/:year/:mon/:day' do
+  get '/:year/:mon/:day' do
   
+  end
 end
