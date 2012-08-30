@@ -3,6 +3,6 @@ require 'bundler'
 
 Bundler.require
 
-require './app'
+require './dday'
 
-run MyApp
+run DDay
