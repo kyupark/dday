@@ -1,4 +1,6 @@
 class DDay < Sinatra::Base
+  set :port, 80
+  
   get '/' do
     @title = "dday"
     haml :index
