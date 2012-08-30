@@ -2,28 +2,24 @@ require 'rubygems'
 require 'sinatra'
 
 get '/' do
+  @title = "Home Page"
   haml :index
 end
 
 get '/about' do
+  @title = "About Us"
   haml :about
 end
 
 get '/contact' do
+  @title = "Contact Us"
   haml :contact
 end
 
-__END__
-@@layout
-%html
-  %body
-    = yiled
+get '/reverse/:string' do
+  params[:string].reverse
+end
 
-@@index
-%h1 Welcome
-
-@@about
-%h1 About
-
-@@contact
-%h1 Contact  
+get '/upcase/:string' do
+  params[:string].upcase
+end
