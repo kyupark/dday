@@ -1,6 +1,3 @@
-require 'rubygems'
-require 'sinatra'
-
 class DDay < Sinatra::Base
   get '/' do
     @title = "dday"
