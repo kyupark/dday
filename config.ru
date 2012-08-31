@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'bundler'
+require 'date'
+require './app'
 
 Bundler.require
 
-require './dday'
-
-run DDay
+run App
