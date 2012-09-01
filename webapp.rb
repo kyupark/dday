@@ -3,12 +3,12 @@ require 'slim'
 require 'active_support/core_ext/integer/inflections'
 require './dday'
 
-class App < Sinatra::Base
+class DDayApp < Sinatra::Base
   
   get '/' do
     @title = "dday"
     @d = DDay.new(2012,1,1)
-    slim @d.coming
+    slim :index
   end
 
   get '/:year/:month/:day/?:string?' do

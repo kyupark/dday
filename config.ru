@@ -1,7 +1,4 @@
-require 'rubygems'
-require 'bundler'
-require './app'
+$:.unshift 'lib'
+require './webapp.rb'
 
-Bundler.require
-
-run App
+run DDayApp

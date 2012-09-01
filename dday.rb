@@ -29,5 +29,16 @@ class DDay
   def days_to_go
     @days_to_go
   end
+  
+  def year
+    @dday.year
+  end
 
+  def month
+    @dday.month
+  end
+
+  def day
+    @dday.day
+  end
 end

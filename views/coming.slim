@@ -1,2 +1,4 @@
-h2
-  = "D#{@d.days_to_go}"
+h4#title #{params[:string]}
+div.since Since
+h3#dday #{@d.year}/#{@d.month}/#{@d.day}
+h2#days D#{@d.days_to_go}

@@ -1,2 +1,4 @@
-h2
-  = "#{@d.days_to_go.ordinalize} day"
+h4#title #{params[:string]}
+div.until Until
+h3#dday #{@d.year}/#{@d.month}/#{@d.day}
+h2#days #{@d.days_to_go.ordinalize} day
