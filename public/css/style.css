@@ -5,11 +5,10 @@ margin: 0 auto;
 #wrapper {
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 font-weight: normal;
-padding: 0 1em;
 background-color:#eee;
-width: 320px;
 border-color: #111;
 border-style: solid;
+margin: 0 auto;
 }
 
 #header {
