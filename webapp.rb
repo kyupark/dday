@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'slim'
 require 'active_support/core_ext/integer/inflections'
-require './dday'
+require 'dday'
 
 class DDayApp < Sinatra::Base
 
@@ -13,16 +13,12 @@ class DDayApp < Sinatra::Base
   end
   
   get '/' do
-    
-  end
-    
-  get '/dday' do
     @string = "Chrsitmas"
     params[:string] = @string
     start(2012, 12, 25, @string)
   end
 
-  get '/dday/:year/:month/:day/?:string?' do
+  get '/:year/:month/:day/?:string?' do
     @string = params[:string]
     year  = params[:year].to_i
     month = params[:month].to_i
