@@ -1,9 +1,7 @@
 require 'sinatra'
 require 'slim'
 require 'active_support/core_ext/integer/inflections'
-require 'date'
 require 'dday'
-
 
 class DDayApp < Sinatra::Base
 

@@ -3,9 +3,9 @@ h4 id="title"
 div.since Since
 h3 id="dday"
   | #{@d.date}
-- for n in 1..@d.hundreds.abs
-  ul id="hundredth"
-    li
+h4#hundredth
+  - for n in 1..@d.hundreds.abs
+    ul
       | #{@d.nth(n*100).date} #{(n*100).ordinalize} day
 h2 id="days"
   | #{@d.days_to_go.ordinalize} day

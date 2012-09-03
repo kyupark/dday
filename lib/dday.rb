@@ -13,7 +13,7 @@ class DDay
     @dday = Date.new(year, month, day)
     self.set_today
     self.set_days_to_go
-    self.set_hundreds
+    self.set_hundreds  
   end
   
   def set_today
@@ -32,7 +32,7 @@ class DDay
   end
   
   def set_hundreds
-    @hundreds = @days_to_go.abs / 100
+    @hundreds = (@days_to_go.abs/100)
   end
   
   def nth(n)

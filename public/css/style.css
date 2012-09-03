@@ -12,17 +12,18 @@ margin: 0 auto;
 }
 
 #header {
-margin: 0 auto;
+margin: 0 auto 20px;
 background-color:#eee;
 }
 
 #name {
 letter-spacing: -1px;
+line-height: 100px;
 font-size: 40px; color: white;
 text-shadow: 1px 0px 0px #eee, 2px 1px 0px #eee, 3px 2px 0px #eee, 4px 3px 0px #eee, 6px 5px 2px #111;
 display: inline;
 z-index: 999; position: relative;
-margin: 0 .5em;
+margin-top: 10em;
 } 
 
 h1 a {
