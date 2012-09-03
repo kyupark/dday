@@ -1,31 +1,19 @@
 div id="header"
   h4 id="title" #{@string}
   h2 id="days" D#{@d.days_to_go} #{@today.year}/#{@today.month}/#{@today.day}
-h4 id="hundredth"
-  - n = @d.days_to_go.abs
-  - if n <= 100
-    - n = n/10*10
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-10
-  - elsif n <= 200
-    - n = n/20*20
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-20
-  - elsif n <= 300
-    - n = n/50*50
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-50
+- n = @d.days_to_go.abs
+ul id="hundredth"
+  - if n <= 150
+    = print_hundredth(n, 1, 1)
+  - elsif n <= 400
+    = print_hundredth(n, log10(50), 1)
+  - elsif n <= 10 ** 3
+    = print_hundredth(n, 2, 1)
+  - elsif n <= 10 ** 4
+    = print_hundredth(n, 3, 2)
+  - elsif n <= 10 ** 5
+    = print_hundredth(n, 4, 3)
   - else
-    - n = n/100*100
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-100
+    = print_hundredth(n, 5, 4)
 h3 id="dday"
   |D-Day #{@d.date}
