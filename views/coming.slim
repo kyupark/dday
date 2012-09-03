@@ -1,4 +1,31 @@
-h4#title #{params[:string]}
-div.since Since
-h3#dday #{@d.year}/#{@d.month}/#{@d.day}
-h2#days D#{@d.days_to_go}
+div id="header"
+  h4 id="title" #{@string}
+  h2 id="days" D#{@d.days_to_go} #{@today.year}/#{@today.month}/#{@today.day}
+h4 id="hundredth"
+  - n = @d.days_to_go.abs
+  - if n <= 100
+    - n = n/10*10
+    - until n <= 0 do
+      ul
+        | D-#{n} #{@d.nth(n).date}
+        - n = n-10
+  - elsif n <= 200
+    - n = n/20*20
+    - until n <= 0 do
+      ul
+        | D-#{n} #{@d.nth(n).date}
+        - n = n-20
+  - elsif n <= 300
+    - n = n/50*50
+    - until n <= 0 do
+      ul
+        | D-#{n} #{@d.nth(n).date}
+        - n = n-50
+  - else
+    - n = n/100*100
+    - until n <= 0 do
+      ul
+        | D-#{n} #{@d.nth(n).date}
+        - n = n-100
+h3 id="dday"
+  |D-Day #{@d.date}

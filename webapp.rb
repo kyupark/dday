@@ -4,23 +4,31 @@ require 'active_support/core_ext/integer/inflections'
 require './dday'
 
 class DDayApp < Sinatra::Base
+
+  def start(year, month, day, string)
+    @d = DDay.new(year, month, day)
+    @today = @d.set_today
+    @title = string
+    slim @d.template
+  end
   
   get '/' do
-    @title = "dday"
-    @d = DDay.new(2012,1,1)
-    slim :index
+    
+  end
+    
+  get '/dday' do
+    @string = "Chrsitmas"
+    params[:string] = @string
+    start(2012, 12, 25, @string)
   end
 
-  get '/:year/:month/:day/?:string?' do
+  get '/dday/:year/:month/:day/?:string?' do
     @string = params[:string]
     year  = params[:year].to_i
     month = params[:month].to_i
     day   = params[:day].to_i
    
-    @title = @string
-    @d = DDay.new(year, month, day)
-    slim @d.coming
-    
+    start(year, month, day, @string)
   end
   
 end

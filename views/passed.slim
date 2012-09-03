@@ -1,4 +1,11 @@
-h4#title #{params[:string]}
-div.until Until
-h3#dday #{@d.year}/#{@d.month}/#{@d.day}
-h2#days #{@d.days_to_go.ordinalize} day
+h4 id="title"
+  | #{params[:string]}
+div.since Since
+h3 id="dday"
+  | #{@d.date}
+h4#hundredth
+  - for n in 1..@d.hundreds.abs
+    ul
+      | #{@d.nth(n*100).date} #{(n*100).ordinalize} day
+h2 id="days"
+  | #{@d.days_to_go.ordinalize} day

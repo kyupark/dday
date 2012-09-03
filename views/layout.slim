@@ -1,11 +1,14 @@
 doctype
 html
   head
-    title = @title
+    title DDay: #{@title}
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
+    link href='css/reset.css' rel='stylesheet' type='text/css'
+    link href='css/style.css' rel='stylesheet' type='text/css'
   body
-    h1#name
-      a href="http://dday.kyu.co"
-        | dday.kyu.co
-    == yield
+    div id="wrapper"
+      h1 id="name"
+        a href="http://ParkQ.net/DDay"
+          | ParkQ.net/DDay
+      == yield
