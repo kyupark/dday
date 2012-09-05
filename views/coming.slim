@@ -1,9 +1,8 @@
 div id="header"
-  h4 id="string" 
+  h4 id="dday" 
     a href="/"
-      | DDay: 
-    | #{@string}
-  h2 id="dday" #{@d.date}
+      | DDay #{@d.date}
+  h3 id="string" #{@string}
   h2 id="daystogo" D#{@d.days_to_go}
 h4 id="hundredth"
   - n = @d.days_to_go.abs
