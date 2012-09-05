@@ -1,4 +1,10 @@
-h2 id="days" D#{@d.days_to_go} #{@today.year}/#{@today.month}/#{@today.day}
+div id="header"
+  h4 id="string" 
+    a href="/"
+      | DDay: 
+    | #{@string}
+  h2 id="dday" #{@d.date}
+  h2 id="daystogo" D#{@d.days_to_go}
 h4 id="hundredth"
   - n = @d.days_to_go.abs
   - if n <= 100

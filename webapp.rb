@@ -6,9 +6,9 @@ require 'dday'
 class DDayApp < Sinatra::Base
 
   def getURL
-    @year  = params[:year].to_i
-    @month = params[:month].to_i
-    @day   = params[:day].to_i
+    @year   = params[:year].to_i
+    @month  = params[:month].to_i
+    @day    = params[:day].to_i
     @string = params[:string]
   end
   

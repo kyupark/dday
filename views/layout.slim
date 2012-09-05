@@ -6,8 +6,8 @@ html
     meta charset="utf-8"
     meta name="viewport" content="width=640"
     link href='/css/reset.css' rel='stylesheet' type='text/css'
-    link href='/css/style.css' rel='stylesheet' type='text/css'
     link href='/css/text.css' rel='stylesheet' type='text/css'
+    link href='/css/style.css' rel='stylesheet' type='text/css'
     
     javascript:
       var _gaq = _gaq || [];
@@ -21,11 +21,4 @@ html
       })();
   body
     div id="wrapper"
-      - unless @d.nil?
-          div id="header"
-            h4 id="string" #{@string}
-            h1 id="name"
-              a href="http://dday.parkq.net"
-                | DDay
-              h2 id="dday" #{@d.date}
       == yield

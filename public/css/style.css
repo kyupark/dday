@@ -1,3 +1,7 @@
+a {
+	text-decoration:none;
+	color: black;
+}
 #wrapper {
 	width: 640px;
 	margin: 0 auto;
@@ -6,14 +10,17 @@
 	text-align: center;
 	background-color: #eee;
 }
-#header #string {
-	font-size: 5em;
-	line-height: 1em;
-}
 #header #name {
-	font-size: 200px;
+	font-size: 80px;
 	line-height: 1.5em;
 }
 #header #dday {
-	font-size: 10em;
+	font-size: 100px;
+}
+#header #string {
+	font-size: 50px;
+	line-height: 1em;
+}
+#textbox {
+	width: 440px;
 }
