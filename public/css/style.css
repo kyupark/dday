@@ -21,6 +21,18 @@ a {
 	font-size: 50px;
 	line-height: 1em;
 }
-#textbox {
-	width: 440px;
+input {
+	font-size: 35px;
+}
+input#textbox {
+	width: 90%;
+}
+input#datebox {
+	width: 60%;
+	margin-right: 2.5%;
+	margin-bottom: 20px;
+}
+input#submit {
+	width: 25%;
+	margin-left: 2.5%;
 }
