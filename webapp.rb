@@ -5,11 +5,19 @@ require 'dday'
 
 class DDayApp < Sinatra::Base
 
-  def getURL
+  def get_URL
     @year   = params[:year].to_i
     @month  = params[:month].to_i
     @day    = params[:day].to_i
     @string = params[:string]
+  end
+  
+  def correct_date?
+    if @year.to_i > 3000 && @month.to_i > 12 && @day.to_i > 31
+      return false
+    else
+      return true
+    end
   end
   
   def start
@@ -18,18 +26,39 @@ class DDayApp < Sinatra::Base
     slim @d.template
   end
   
+  not_found do
+    redirect to('/')
+  end
+  
   get '/' do
     slim :index
   end
 
   get '/:year/:month/:day/?:string?' do
-    getURL
-    start
+    get_URL
+    if correct_date?
+      start
+    else
+      redirect to('/')
+    end
   end
   
   get '/:year-:month-:day/?:string?' do
-    getURL
-    start
+    get_URL
+    if correct_date?
+      start
+    else
+      redirect to('/')
+    end
+  end
+  
+  get '/:year.:month.:day/?:string?' do
+    get_URL
+    if correct_date?
+      start
+    else
+      redirect to('/')
+    end
   end
   
 end

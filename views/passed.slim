@@ -1,8 +1,10 @@
 div id="header"
   h4 id="string" 
     a href="/"
-      | DDay
-    |  - #{@string}
+      span id="name"
+        |DDay
+    - unless @string.to_s == ""
+      |  - #{@string}
   h3 id="dday" #{@d.date}
   h2 id="days" #{@d.days_to_go.ordinalize} day
 

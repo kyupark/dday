@@ -2,7 +2,7 @@ doctype 5
 html
   head
     title
-      = @string=="" ? "#{@d.date}" : "DDay: #{@string}"
+      = @string.to_s=="" ?  @d.nil? ? "DDay" : "#{@d.date}" : "#{@string}"
     meta charset="utf-8"
     meta name="viewport" content="width=640"
     link href='/css/reset.css' rel='stylesheet' type='text/css'

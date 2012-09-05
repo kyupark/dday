@@ -1,9 +1,12 @@
 div id="header"
   h4 id="dday" 
     a href="/"
-      | DDay #{@d.date}
-  h3 id="string" #{@string}
-  h2 id="daystogo" D#{@d.days_to_go}
+      span id="name"
+        | DDay
+    | : #{@d.date}
+  - unless @string.to_s==""
+    h2 id="string" #{@string}
+  h1 id="daystogo" D#{@d.days_to_go}
 h4 id="hundredth"
   - n = @d.days_to_go.abs
   - if n <= 100
