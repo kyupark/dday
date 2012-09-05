@@ -5,26 +5,34 @@ require 'dday'
 
 class DDayApp < Sinatra::Base
 
-  def start(year, month, day, string)
-    @d = DDay.new(year, month, day)
+  def start
+    @d = DDay.new(@year, @month, @day)
     @today = @d.set_today
-    @title = string
+    @title = @string
     slim @d.template
+  end
+  
+  def getURL
+    @string = params[:string]
+    @year  = params[:year].to_i
+    @month = params[:month].to_i
+    @day   = params[:day].to_i
   end
   
   get '/' do
     @string = "Chrsitmas"
     params[:string] = @string
-    start(2012, 12, 25, @string)
+    slim :index
   end
 
   get '/:year/:month/:day/?:string?' do
-    @string = params[:string]
-    year  = params[:year].to_i
-    month = params[:month].to_i
-    day   = params[:day].to_i
-   
-    start(year, month, day, @string)
+    getURL
+    start
+  end
+  
+  get '/:year-:month-:day/?:string?' do
+    getURL
+    start
   end
   
 end
