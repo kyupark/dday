@@ -1,14 +1,13 @@
-doctype
+doctype 5
 html
   head
     title
-      | DDay
-      = unless @title.nil? then ": #{@title}" end
+      = @title.nil? ? "#{@d.date}" : "DDay: #{@title}"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
     link href='/css/reset.css' rel='stylesheet' type='text/css'
     link href='/css/style.css' rel='stylesheet' type='text/css'
-    link href='/css/media.css' rel='stylesheet' type='text/css'
+    link href='/css/text.css' rel='stylesheet' type='text/css'
     link href='/apple-touch-icon.png' rel='icon' type='image/png'
     link href='/apple-touch-icon.png' rel='apple-touch-icon'
     javascript:
@@ -22,8 +21,11 @@ html
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
   body
-    div id="wrapper'
-      h1 id="name"
-        a href="http://dday.parkq.net"
-          | DDay.ParkQ.net
+    div id="wrapper"
+      div id="header"
+        h4 id="string" #{@string}
+        h1 id="name"
+          a href="http://dday.parkq.net"
+            | DDay
+        h3 id="dday" #{@d.date}
       == yield

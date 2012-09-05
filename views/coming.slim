@@ -1,6 +1,4 @@
-div id="header"
-  h4 id="title" #{@string}
-  h2 id="days" D#{@d.days_to_go} #{@today.year}/#{@today.month}/#{@today.day}
+h2 id="days" D#{@d.days_to_go} #{@today.year}/#{@today.month}/#{@today.day}
 h4 id="hundredth"
   - n = @d.days_to_go.abs
   - if n <= 100
