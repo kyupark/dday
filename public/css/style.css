@@ -95,6 +95,7 @@ input#datebox {
 	margin: 0 auto;
 	text-align: right;
 	line-height: 30px;
+	padding-right: 50px;
 }
 
 #firstday {
