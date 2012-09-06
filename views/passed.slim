@@ -14,8 +14,6 @@ div id="header"
         | #{ordinal @d.days_to_go} day
   - unless @string.to_s==""
     h2 id="string" #{@string}
-  h5 id="today"
-    | Today #{@today.year}/#{@today.month}/#{@today.day}
 div id="thdays"
   ul
     - for i in @d.thdays
