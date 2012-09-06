@@ -3,7 +3,7 @@ div id="header"
     a href="/"
       span id="name"
         | DDay
-    |  #{@d.date}
+    | #{@d.date}
   - unless @string.to_s==""
     h2 id="string" #{@string}
   h1 id="daystogo" D#{@d.days_to_go}
