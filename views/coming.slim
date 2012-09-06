@@ -7,7 +7,7 @@ div id="header"
   - unless @string.to_s==""
     h2 id="string" #{@string}
   h1 id="daystogo" D#{@d.days_to_go}
-h4 id="hundredth"
+div id="hundredth"
   - n = @d.days_to_go.abs
   - if n <= 100
     - n = n/10*10

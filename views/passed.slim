@@ -10,7 +10,7 @@ div id="header"
     | #{@d.days_to_go}
     span id="ordinal"
       | #{ordinal @d.days_to_go} day
-h4#hundredth
+div id="hundredth"
   - for n in 1..@d.hundreds.abs
     ul
       | #{@d.nth(n*100).date} #{(n*100).ordinalize} day
