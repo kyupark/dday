@@ -4,34 +4,11 @@ div id="header"
       span id="name"
         | DDay
     | #{@d.date}
+  h1 id="daystogo" D#{@d.days_to_go}
   - unless @string.to_s==""
     h2 id="string" #{@string}
-  h1 id="daystogo" D#{@d.days_to_go}
-div id="hundredth"
-  - n = @d.days_to_go.abs
-  - if n <= 100
-    - n = n/10*10
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-10
-  - elsif n <= 200
-    - n = n/20*20
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-20
-  - elsif n <= 300
-    - n = n/50*50
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-50
-  - else
-    - n = n/100*100
-    - until n <= 0 do
-      ul
-        | D-#{n} #{@d.nth(n).date}
-        - n = n-100
-h3 id="dday"
-  |D-Day #{@d.date}
+div id="thdays"
+  ul
+    - for i in @d.thdays
+      li #{i}
+    li DDay #{@d.date}

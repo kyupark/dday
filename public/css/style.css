@@ -8,11 +8,12 @@ a {
 }
 #wrapper {
 	width: 640px;
-	margin: 0 auto;
+	margin: 0 auto 0;
 }
 #header {
 	text-align: center;
 	background-color: #eee;
+	padding-bottom: 40px;
 }
 #header #main {
 	font-size: 150px;
@@ -44,7 +45,7 @@ span#name {
 	line-height: 180px;
 	font-weight: 900;
 	letter-spacing: -5px;
-	padding-bottom: 10px;
+	padding-top: 10px;
 }
 #header #ordinal{
 	font-size: 80px;
@@ -89,7 +90,23 @@ input#datebox {
 	-webkit-border-radius:10px;
 	border:1px solid #e8e
 }
-#footer {
+#twitter {
+	width: 640px;
+	margin: 0 auto;
 	text-align: right;
-	padding-right: 70px;
+	line-height: 30px;
+}
+
+#firstday {
+	font-size:230px;
+	line-height:300px;
+	letter-spacing: -10px;	
+}
+ul {
+	list-style-type: none;
+}
+#thdays {
+	background-color:#ddd;
+	padding-left: 50px;
+	font-size:60px;
 }

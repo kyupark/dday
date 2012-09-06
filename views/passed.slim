@@ -4,15 +4,18 @@ div id="header"
       span id="name"
         | DDay
     | #{@d.date}
+  h1 id="daystogo"
+    - if @d.days_to_go == 1
+      span id="firstday"
+        | DDay!
+    - else
+      | #{@d.days_to_go}
+      span id="ordinal"
+        | #{ordinal @d.days_to_go} day
   - unless @string.to_s==""
     h2 id="string" #{@string}
-  h1 id="daystogo" 
-    | #{@d.days_to_go}
-    span id="ordinal"
-      | #{ordinal @d.days_to_go} day
-div id="hundredth"
-  - for n in 1..@d.hundreds.abs
-    ul
-      | #{@d.nth(n*100).date} #{(n*100).ordinalize} day
-h2 id="days"
-  | #{@d.days_to_go.ordinalize} day
+div id="thdays"
+  ul
+    - for i in @d.thdays
+      li #{i}
+    li DDay #{@d.date}

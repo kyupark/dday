@@ -1,19 +1,19 @@
+require 'active_support/core_ext/integer/inflections'
+
 def ordinal value
- 
-    case value.to_s
-    when /^[0-9]*[1][0-9]$/
-      suffix = "th"
-    when /^[0-9]*[1]$/
-      suffix = "st"
-    when /^[0-9]*[2]$/
-      suffix = "nd"
-    when /^[0-9]*[3]$/
-      suffix = "rd"
-    else
-      suffix = "th"
-    end
- 
-    return suffix
+  case value.to_s
+  when /^[0-9]*[1][0-9]$/
+    suffix = "th"
+  when /^[0-9]*[1]$/
+    suffix = "st"
+  when /^[0-9]*[2]$/
+    suffix = "nd"
+  when /^[0-9]*[3]$/
+    suffix = "rd"
+  else
+    suffix = "th"
+  end
+  suffix
 end
 
 def days_before(dday, days) 
@@ -34,6 +34,36 @@ class DDay
     self.set_hundreds  
   end
   
+  def print_thday(n)
+    if passed?
+      @thdays.push("#{n.ordinalize} #{days_after(@dday, n).date}")
+    else
+      @thdays.push("D-#{n} #{days_before(@dday, n).date}")
+    end
+  end
+  
+  def items(x)
+    @n = @n / (10 ** (x-1)) * (10 ** (x-1))
+    until @n <=(10 ** (x-1)) do
+      print_thday(@n)
+      @n -= (10 ** (x-1))
+    end
+    print_thday(@n)
+  end
+  
+  def power(x)
+    items(x)
+    items(x-1)
+  end
+  
+  def thdays
+    @thdays = []
+    @n = days_to_go.abs
+    x = @n.to_s.length
+    power(x)    
+    @thdays.uniq
+  end
+
   def set_today
     t = Time.now
     y = t.year
