@@ -43,12 +43,14 @@ class DDay
   end
   
   def items(x)
-    @n = @n / (10 ** (x-1)) * (10 ** (x-1))
-    until @n <=(10 ** (x-1)) do
+    if x > 1
+      @n = @n / (10 ** (x-1)) * (10 ** (x-1))
+      until @n <=(10 ** (x-1)) do
+        print_thday(@n)
+        @n -= (10 ** (x-1))
+      end
       print_thday(@n)
-      @n -= (10 ** (x-1))
     end
-    print_thday(@n)
   end
   
   def power(x)
