@@ -1,13 +1,15 @@
 div id="header"
-  h4 id="string" 
+  h4 id="dday" 
     a href="/"
       span id="name"
-        |DDay
-    - unless @string.to_s == ""
-      |  - #{@string}
-  h3 id="dday" #{@d.date}
-  h2 id="days" #{@d.days_to_go.ordinalize} day
-
+        | DDay
+    |  #{@d.date}
+  - unless @string.to_s==""
+    h2 id="string" #{@string}
+  h1 id="daystogo" 
+    | #{@d.days_to_go}
+    span id="ordinal"
+      | #{ordinal @d.days_to_go} day
 h4#hundredth
   - for n in 1..@d.hundreds.abs
     ul
