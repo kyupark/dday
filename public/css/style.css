@@ -67,7 +67,7 @@ input#datebox {
 	letter-spacing: -2px;	
 	margin-top: 10px;
 	margin-right: 15px;
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 #submit {
 	width: 150px;
@@ -95,7 +95,6 @@ input#datebox {
 	margin: 0 auto;
 	text-align: right;
 	line-height: 30px;
-	padding-right: 50px;
 }
 
 #firstday {
