@@ -1,4 +1,5 @@
 require 'active_support/core_ext/integer/inflections'
+require 'active_support'
 
 def ordinal value
   case value.to_s
@@ -66,6 +67,7 @@ class DDay
 
   def set_today
     t = Time.now
+    t.localtime("+09:00")
     y = t.year
     m = t.month
     d = t.day

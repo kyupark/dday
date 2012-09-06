@@ -13,7 +13,13 @@ a {
 #header {
 	text-align: center;
 	background-color: #eee;
-	padding-bottom: 40px;
+	padding-bottom: 1px;
+}
+#today {
+	text-align: right;
+	color:#ccc;
+	font-size:30px;
+	padding-right: 20px;
 }
 h1 a {
   	color: #a1a;
@@ -95,9 +101,13 @@ input#datebox {
 }
 #twitter {
 	width: 640px;
-	margin: 0 auto;
+	margin: 0 auto 0;
 	text-align: right;
 	line-height: 30px;
+}
+
+#twitter a {
+	margin-right: 30px;
 }
 
 #firstday {
