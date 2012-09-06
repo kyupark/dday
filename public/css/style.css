@@ -108,6 +108,10 @@ input#datebox {
 	line-height: 30px;
 }
 
+#twitter a {
+	padding-right:30px;
+}
+
 #firstday {
 	font-size:230px;
 	line-height:300px;
