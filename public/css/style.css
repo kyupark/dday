@@ -15,6 +15,9 @@ a {
 	background-color: #eee;
 	padding-bottom: 40px;
 }
+h1 a {
+  	color: #a1a;
+}
 #header #main {
 	font-size: 150px;
 	line-height: 200px;
