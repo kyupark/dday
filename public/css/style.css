@@ -13,8 +13,15 @@ a {
 #header {
 	text-align: center;
 	background-color: #eee;
-	padding-bottom: 40px;
 }
+#today {
+	text-align: right;
+	color:#ccc;
+	font-size:30px;
+	padding-right:20px;
+	padding-bottom:40px;
+}
+
 h1 a {
   	color: #a1a;
 }
