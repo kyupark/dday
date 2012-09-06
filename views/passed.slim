@@ -20,4 +20,5 @@ div id="thdays"
   ul
     - for i in @d.thdays
       li #{i}
-    li DDay #{@d.date}
+    - unless @d.thdays.empty?
+      li DDay #{@d.date}
