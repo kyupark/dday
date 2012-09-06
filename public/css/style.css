@@ -13,13 +13,14 @@ a {
 #header {
 	text-align: center;
 	background-color: #eee;
+	padding-bottom: 1px;
 }
 #today {
 	text-align: right;
 	color:#ccc;
 	font-size:30px;
 	padding-right:20px;
-	padding-bottom:40px;
+	line-height:30px;
 }
 
 h1 a {
