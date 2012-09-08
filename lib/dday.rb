@@ -45,7 +45,18 @@ class DDay
   def items(x)
     if x > 1
       @n = @n / (10 ** (x-1)) * (10 ** (x-1))
-      until @n <=(10 ** (x-1)) do
+      until @n <= (10 ** (x-1)) do
+        print_thday(@n)
+        @n -= (10 ** (x-1))
+      end
+      print_thday(@n)
+    end
+  end
+  
+  def passed_items(x)
+    if x > 1
+      @n = (10 ** (x))
+      until @n <= (10 ** (x-1)) do
         print_thday(@n)
         @n -= (10 ** (x-1))
       end
@@ -54,8 +65,14 @@ class DDay
   end
   
   def power(x)
-    items(x)
-    items(x-1)
+    if passed?
+      passed_items(x)
+      @n = days_to_go.abs
+      items(x)
+    else
+      items(x)
+      items(x-1)
+    end
   end
   
   def thdays
