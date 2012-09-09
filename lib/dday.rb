@@ -84,7 +84,7 @@ class DDay
   end
 
   def set_today
-    t = Time.now.getlocal("+09:00")
+    t = Time.now
     y = t.year
     m = t.month
     d = t.day
