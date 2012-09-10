@@ -4,9 +4,9 @@ div id="header"
       span id="name"
         | DDay
     | #{@d.date}
-  h1 id="daystogo" D#{@d.days_to_go}
   - unless @string.to_s==""
     h2 id="string" #{@string}
+  h1 id="daystogo" D#{@d.days_to_go}
   h5 id="today"
     | Today is #{@today.year}/#{@today.month}/#{@today.day}
 div id="thdays"
